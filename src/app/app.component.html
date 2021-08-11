@@ -5,7 +5,7 @@
         <div class="table" id="pdfTable" #pdfTable>
           <h1>{{name}}</h1>
           <button class="btn btn-success" (click)="downloadAsPDF()">Export To PDF</button>
-          <table  class="table table-bordered  table-striped">
+          <table class="table table-bordered  table-striped">
             <tr class="bg-dark text-white">
               <th>Company</th>
               <th>Contact</th>
@@ -67,7 +67,23 @@
       </div>
     </section>
   </div>
+  <div class="row mt-2">
+    <section class="col-md-12 md-offset-2 text-center">
+      <a (click)="generatePDF()" class="btn btn-info text-white" role="button" href="javascript:void(0);">Export Canvas
+        &raquo;</a>
+    </section>
+    <section class="col-md-12 md-offset-2" id="chartarea">
+      <div class="card">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <canvas width="300" height="300" style="border: 5px groove #ed1212"></canvas>
+    </section>
+  </div>
 </section>
-
-
-<div> </div>

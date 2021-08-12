@@ -31,18 +31,18 @@ export class AppComponent {
     doc.save('tableToPdf.pdf');
   }
   public generatePDF(): void {
-    let DATA = document.getElementById('chartarea');
+    let toPDF = document.getElementById('chartarea');
 
-    html2canvas(DATA).then(canvas => {
+    html2canvas(toPDF).then(canvas => {
       let fileWidth = 208;
       let fileHeight = (canvas.height * fileWidth) / canvas.width;
 
-      const FILEURI = canvas.toDataURL('image/png');
-      let PDF = new jsPDF('p', 'mm', 'a4');
+      const fileUri = canvas.toDataURL('image/png');
+      let pdf = new jsPDF('p', 'mm', 'a4');
       let position = 0;
-      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+      pdf.addImage(fileUri, 'PNG', 0, position, fileWidth, fileHeight);
 
-      PDF.save('canvasgen.pdf');
+      pdf.save('canvasgen.pdf');
     });
   }
 }
